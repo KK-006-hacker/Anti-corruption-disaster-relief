@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: url('https://www.istockphoto.com/photo/community-heart-shape-word-cloud-concept-gm1465678597-498022403') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background for readability */
+    color: white;
+    padding: 50px 20px;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #f8f9fa;
+}
+
+h2 {
+    margin: 10px 0;
+    font-size: 2em;
+}
+
+input, button {
+    padding: 15px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    width: 100%;
+    max-width: 300px; /* Limiting the width for better UI */
+    box-sizing: border-box;
+}
+
+input {
+    font-size: 1.2em;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+}
+
+button {
+    background-color: #28a745; /* Green color for donation button */
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #218838; /* Darker green when hovered */
+}
+
+nav {
+    background: rgba(0, 0, 0, 0.8); /* Transparent background for the navigation bar */
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+    transition: text-decoration 0.3s;
+}
+
+nav a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+main {
+    margin-top: 120px; /* Add margin for space below the fixed navbar */
+}
+
+div {
+    background: rgba(0, 0, 0, 0.8); /* Dark background with slight transparency */
+    padding: 30px;
+    margin: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #f8f9fa;
+    font-size: 1em;
+}
+
+footer p {
+    margin: 0;
+}
