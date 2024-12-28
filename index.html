@@ -4,135 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decentralized Disaster Relief</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('https://www.istockphoto.com/photo/community-heart-shape-word-cloud-concept-gm1465678597-498022403') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-        }
-        header {
-            text-align: center;
-            padding: 50px 20px;
-            background: rgba(0, 0, 0, 0.7); /* Increased opacity for better text visibility */
-        }
-        header h1 {
-            font-size: 3em;
-            margin: 0;
-            color: #f8f9fa; /* White text for better contrast */
-        }
-        header p {
-            font-size: 1.5em;
-            margin-top: 10px;
-            color: #f8f9fa; /* White text for better contrast */
-        }
-        main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 50px;
-            text-align: center;
-        }
-        div {
-            background: rgba(0, 0, 0, 0.8); /* Darker background for better contrast */
-            padding: 30px 20px;
-            margin: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 500px;
-        }
-        div h2 {
-            margin: 0 0 15px 0;
-            font-size: 1.8em;
-        }
-        div button, div input {
-            padding: 15px 25px;
-            margin: 10px 5px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-        }
-        div button {
-            background: #28a745; /* Green color for donation button */
-            color: #fff;
-            cursor: pointer;
-            transition: background 0.3s ease-in-out;
-        }
-        div button:hover {
-            background: #218838;
-        }
-        div input {
-            width: 100%;
-            font-size: 1.2em;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 2px solid #ccc;
-        }
-        nav {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 15px;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2em;
-            transition: text-decoration 0.3s;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        #balance {
-            font-size: 1.5em;
-            margin-top: 15px;
-        }
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            color: #f8f9fa;
-            font-size: 1em;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
 </head>
 <body>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <a href="#">Donate</a>
-    </nav>
-    
     <header>
-        <h1>Decentralized Disaster Relief Platform</h1>
-        <p>Transparent and secure donations for disaster relief efforts.</p>
+        <img src="assets/logo.png" alt="Logo" class="logo">
+        <h1>Disaster Relief DApp</h1>
+        <p>Empowering transparent and secure disaster relief efforts.</p>
     </header>
-    
+    <nav>
+        <a href="#donate">Donate</a>
+        <a href="#status">Status</a>
+        <a href="#about">About Us</a>
+    </nav>
     <main>
-        <div>
-            <h2>Donate to Relief Efforts</h2>
-            <input type="number" id="donationAmount" placeholder="Amount in ETH" required>
-            <button onclick="donate()">Donate</button>
-        </div>
-        <div>
-            <h2>Contract Balance</h2>
-            <button onclick="getBalance()">Check Balance</button>
-            <button onclick="connectMetaMask()">Connect MetaMask</button>
-            <p id="balance">Balance: 0 ETH</p>
-        </div>
-    </main>
+        <section id="donate">
+            <h2>Donate Now</h2>
+            <div class="donate-card">
+                <h3>Ethereum Donation</h3>
+                <input type="number" id="ethAmount" placeholder="Amount in ETH">
+                <button onclick="donateEth()">Donate</button>
+            </div>
+            <div class="donate-card">
+                <h3>Solana Donation</h3>
+                <input type="number" id="solAmount" placeholder="Amount in SOL">
+                <button onclick="donateSol()">Donate</button>
+            </div>
+        </section>
 
+        <section id="status">
+            <h2>Donation Status</h2>
+            <div class="status-card">
+                <h3>Ethereum Contract</h3>
+                <button onclick="getEthBalance()">Check Balance</button>
+                <p id="ethBalance">Balance: 0 ETH</p>
+            </div>
+            <div class="status-card">
+                <h3>Solana Program</h3>
+                <button onclick="getSolanaBalance()">Check Balance</button>
+                <p id="solBalance">Balance: 0 SOL</p>
+            </div>
+        </section>
+    </main>
     <footer>
-        <p>&copy; 2024 Decentralized Disaster Relief Platform. All rights reserved.</p>
+        <p>&copy; 2024 Disaster Relief Platform. All rights reserved.</p>
     </footer>
-    
     <script src="app.js"></script>
+    <script src="solana.js"></script>
 </body>
 </html>
